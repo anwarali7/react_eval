@@ -7,7 +7,7 @@ const TotalDepenses = ({ expenses }) => {
 
     return (
         <div>
-            <p>Total : {formatToEuros.format(totalAmount)}</p>
+            <p><strong>Total : {formatToEuros.format(totalAmount)}</strong></p>
         </div>
     );
 };

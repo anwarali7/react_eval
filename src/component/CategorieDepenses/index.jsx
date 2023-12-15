@@ -1,3 +1,5 @@
+import './CategorieDepenses.css';
+
 const CategorieDepenses = ({ expenses }) => {
     const formatToEuros = new Intl.NumberFormat('fr-Fr', {
         style: 'currency',
@@ -13,10 +15,10 @@ const CategorieDepenses = ({ expenses }) => {
     return (
         <div>
             <h2>Dépenses par Catégories</h2>
-            <ul>
+            <ul className="categories-expenses">
                 {Object.entries(categoryTotals).map(([category, totalAmount]) => (
                     <li key={category}>
-                        {category}: {formatToEuros.format(totalAmount)}
+                        <span>{category} :</span><span>{formatToEuros.format(totalAmount)}</span>
                     </li>
                 ))}
             </ul>

@@ -1,0 +1,18 @@
+.categories-expenses {
+  list-style: none;
+  max-height: 35vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.categories-expenses li {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  width: 350px;
+}
+
