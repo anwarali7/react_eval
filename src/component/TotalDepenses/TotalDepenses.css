@@ -1,0 +1,10 @@
+.total-amount {
+  font-weight: bold;
+  transition: background-color 1000ms ease-in-out;
+  background-color: white;
+}
+
+.total-amount.color-changed {
+  background-color: hsl(244, 54%, 85%);
+  transition: none;
+}
