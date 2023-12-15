@@ -1,33 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Form from './component/Form';
+import ListeDepenses from './component/ListeDepenses';
+import TotalDepenses from './component/TotalDepenses';
+import { useReducer } from 'react';
+import depensesReducer, {initialState} from './utils/reducer/depensesReducer';
+import CategorieDepenses from './component/CategorieDepenses';
+
+const categories = [
+  "Alimentation",
+  "Logement",
+  "Transport",
+  "Divertissement",
+  "Santé",
+  "Éducation",
+  "Autres"
+]
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [state, dispatch] = useReducer(depensesReducer, initialState);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more. Test
-      </p>
+      <h1>Ma liste de dépenses</h1>
+      <Form dispatch={dispatch} formData={state.formData} categories={categories}/>
+      <p className="message">{state.message}&nbsp;</p>
+      <ListeDepenses expenses={state.expenses}/>
+      <TotalDepenses expenses={state.expenses}/>
+      <CategorieDepenses expenses={state.expenses}/>
     </>
   )
 }

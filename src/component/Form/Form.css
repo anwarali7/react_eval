@@ -1,0 +1,52 @@
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.category {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 10px;
+    font-weight: 600;
+    color: #333;
+}
+
+.category:hover {
+  cursor: pointer;
+}
+
+input.amount {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 10px;
+    font-weight: 600;
+    color: #333;
+    
+}
+
+.add-btn {
+    background-color: #2d2783;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 200ms;
+    /* box-shadow */
+}
+
+
+
+.add-btn:hover {
+  background-color: hsl(244, 54%, 55%);
+}
+
+.add-btn[disabled] {
+  background-color: #ccc;
+  color: #fff;
+  cursor: not-allowed;
+}
